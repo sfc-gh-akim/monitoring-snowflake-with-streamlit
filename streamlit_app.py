@@ -48,6 +48,8 @@ session = st.connection.snowflake.login({
     'ttl': 120
 }, 'Snowflake Login')
 
+session.sql_simplifier_enabled = True
+
 # Set up the layout
 date_row = st.columns(2)
 top_row = st.columns(3)
