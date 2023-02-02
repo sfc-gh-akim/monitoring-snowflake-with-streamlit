@@ -4,8 +4,7 @@ import st_connection.snowflake
 from snowflake.snowpark.functions import avg as avg_, sum as sum_, col, lit, datediff, dateadd, date_trunc
 from snowflake.snowpark.types import StringType, IntegerType, DateType, FloatType
 import datetime
-
-
+import snowflake.snowpark as sp
 try:
     st.set_page_config(
         page_title="Monitoring Snowflake with Streamlit",
@@ -56,6 +55,7 @@ middle_row = st.columns(2)
 bottom_row = st.container()
 st.caption(disclaimer + " The metrics shown on this page should be used as information only. Please work with your Snowflake Account team if you have any questions.")
 st.caption(f"Streamlit Version: {st.__version__}")
+st.caption(f"Snowpark Version: {sp.__version__}")
 
 try:
     with date_row[1]:
